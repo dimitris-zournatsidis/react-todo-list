@@ -17,7 +17,7 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   width: 30rem;
   min-height: 35rem;
   background: #161a2b;
@@ -69,6 +69,13 @@ h1 {
     rgba(155, 0, 250, 1) 100%
   );
   color: #fff;
+  opacity: 0.8;
+  transition: all 100ms ease-in-out;
+}
+
+.todo-button:hover {
+  opacity: 1;
+  transition: all 100ms ease-in-out;
 }
 
 .clear-all-button {

@@ -82,8 +82,6 @@ export default function TodoList(props: TodoListProps): React.ReactElement {
 
   // delete todos
   function handleDelete(id: number) {
-    // todos.splice(id, 1);
-    // setTodos([...todos]);
     const updated = [...todos].filter((todo) => todo.id !== id);
     setTodos(updated);
   }
@@ -97,7 +95,7 @@ export default function TodoList(props: TodoListProps): React.ReactElement {
 
   return (
     <>
-      <h1>What's your Plan for Today?</h1>
+      <h1>What's your Plan?</h1>
       <TodoForm
         value={input}
         setValue={setInput}

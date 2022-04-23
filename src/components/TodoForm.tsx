@@ -13,23 +13,26 @@ export default function TodoForm(props: TodoFormProps): React.ReactElement {
     props.setValue(event.target.value);
   }
 
-  function handleSubmit() {
-      props.onSubmit();
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    props.onSubmit();
   }
 
   return (
     <div className="todo-form">
-      <input
-        type="text"
-        value={props.value}
-        onChange={handleChange}
-        className="todo-input"
-        placeholder="Add a todo"
-        ref={props._ref}
-      />
-      <button onClick={handleSubmit} className="todo-button">
-        {props.buttonLabel}
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={props.value}
+          onChange={handleChange}
+          className="todo-input"
+          placeholder="Add a todo"
+          ref={props._ref}
+        />
+        <button onClick={handleSubmit} className="todo-button">
+          {props.buttonLabel}
+        </button>
+      </form>
     </div>
   );
 }
